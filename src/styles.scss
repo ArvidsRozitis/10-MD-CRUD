@@ -1,3 +1,87 @@
 body {
-  background-color: antiquewhite;
+  background-color: rgb(35, 42, 54);
+  padding: 50px;
+  font-family: sans-serif;
+}
+.info__section {
+  padding: 20px 0px;
+  color: white;
+}
+.info__wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+.task {
+  color: white;  
+}
+.task__card {
+  display: flex;
+  flex-direction: row;
+  max-width: 500px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: grey; 
+}
+.task__main-info {
+  display: flex;
+  width: 250px;
+  flex-direction: column;
+  gap:15px;
+  border-radius: 8px; 
+  border: 1px solid black;
+   
+  align-items: center;
+  padding: 15px;
+  background-color: #3C3E44;
+}
+.task__picture {
+  width: 100%;
+  border-radius: 4px;
+}
+.task__text-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.task__title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.task__description {
+  font-size: 1rem;
+  font-weight: 100;
+}
+.task__buttons-wraper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.task__form {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  gap: 30px;
+  padding: 10px;
+}
+.task__title-change {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #cecece;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+.task__description-change {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #cecece;
+  font-weight: bold;
+  font-size: 0.65rem;
+}
+.task__input-field {
+  color: black;
 }
