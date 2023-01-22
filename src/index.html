@@ -11,10 +11,11 @@
     <title>Document</title>
 </head>
 <body>
+    <header class="heading">10MD: CRUD</header>
     <section class="info info__section">
         <div class="info info__wrapper">
             <div class="add add__button">
-                <button class="js-add-new-task-button">
+                <button class="task task__button task__button-edit task__button-edit--green js-add-new-task-button">
                     Add new task
                 </button>
             </div>
@@ -22,14 +23,16 @@
                 <span class="info info__text js-task-count">task count 0</span>
             </div>
         </div>
+
         <div class="task task-add task-add--hidden js-form-add-task">
-            <form class="task task__form">
+            <form class="task task-add__form">
+                <h2 class="task task-add__heading">Adding new task</h2>
                 <input 
                     type="file"
                     accept="image/*"
-                    class="task__image-change"
+                    class="task task-add-image__upload"
                 >
-                <label class="task task__title-change">
+                <label class="task task-add__info">
                     Task title
                     <input
                         type="text"
@@ -39,7 +42,7 @@
                         required
                     >
                 </label>
-                <label class="task task__description-change">
+                <label class="task task-add__info">
                     Task description
                     <input
                         type="text"
@@ -50,7 +53,7 @@
                     >
                 </label>
                 <div class="task task__button">
-                    <button class="js-button-add-task-to-list">
+                    <button class="task task__button task__button-edit task__button-edit--green js-button-add-task-to-list">
                         add to the task list
                     </button>
                 </div>
@@ -62,63 +65,9 @@
 
     <section class="tasks tasks__section">
         <div class="tasks tasks__grid js-tasks-grid">
-            <!-- <div class="task task__card">
-                <div class="task task__main-info">
-                    <img src="https://picsum.photos/400/400" alt="task picture" class="task task__picture">
-                    <div class="task task__text-wrapper">
-                        <h3 class="task task__title">
-                            Task title
-                        </h3>
-                        <p class="task task__description">
-                            "Lorem ipsum dolor sit amet, iusrum."
-                        </p>
-                    </div>
-                    <div class="task task__buttons-wraper">
-                        <div class="task task__button">
-                            <button class="js-button-edit">
-                                Edit
-                            </button>
-                        </div>
-                        <div class="task task__button">
-                            <button class="js-button-delete">
-                                Delete
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <form class="task task__form task__form--hidden">
-                    <input 
-                        type="file"
-                        accept="image/*"
-                        class="task__image-change"
-                    >
-                    <label class="task task__title-change">
-                        Task title
-                        <input
-                            type="text"
-                            placeholder="Here comes title"
-                            class="task task__input-field"
-                            maxlength="20"
-                            required
-                        >
-                    </label>
-                    <label class="task task__description-change">
-                        Task description
-                        <input
-                            type="text"
-                            placeholder="Here comes title"
-                            class="task task__input-field"
-                            maxlength="100"
-                            required
-                        >
-                    </label>
-                    <div class="task task__button">
-                        <button class="js-button-update">
-                            Update
-                        </button>
-                    </div>
-                </form>
-            </div> -->
+            
+
+
         </div>
     </section>
 

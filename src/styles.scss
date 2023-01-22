@@ -3,6 +3,15 @@ body {
   padding: 50px;
   font-family: sans-serif;
 }
+.heading {
+  display: flex;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  color: #d1d1d1;
+  align-items: center;
+  justify-content: center;
+}
 .info__section {
   padding: 20px 0px;
   color: white;
@@ -16,6 +25,7 @@ body {
   gap: 20px;
   align-items: center;
 }
+//------------------adding new card
 .task {
   color: white;  
 }
@@ -24,83 +34,161 @@ body {
     display: none
   }
 }
+.task-add__form {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  background-color: #797878;
+  border-radius: 4px;
+  width: 275px;
+  min-height: 400px;
+  padding: 8px;
+  align-items: center;
+}
+.task-add__heading {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  letter-spacing: 0.05rem;
+  padding: 30px 0;
+}
+.task-add__info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  font-size: 1.125rem;
+  font-weight: bolder;
+  letter-spacing: 0.05rem;
+}
+
+
+
+
+
+
+//------------------cards on display
 .tasks__grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
 }
 .task__card {
-  position: relative;
   display: flex;
-  flex-direction: row;
-  border-radius: 8px;
+  max-width: 275px;
+  
+  flex-direction: column;
+  align-items: center;
+  border-radius: 4px;
   overflow: hidden;
 }
-.task__main-info {
+.task__main {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  max-width: 250px;
-  gap:15px;
-  border-radius: 8px; 
-  border: 1px solid black;
-   
-  align-items: center;
-  padding: 15px;
+  gap: 8px;
+  padding: 8px;
   background-color: #3C3E44;
+  border-radius: 0px 0 4px 4px;
 }
 .task__picture {
-  width: 100%;
-  border-radius: 4px;
+  width: 50px;
 }
-.task__text-wrapper {
+.task__title {
+  font-size: 1.125rem;
+  font-weight: bolder;
+  letter-spacing: 0.05rem;
+}
+.task__description {
+  color: #a1a1a1;
+  font-size: 0.875rem;
+  letter-spacing: 0.05rem;
+  text-indent: 20px;
+  text-align:left;
+}
+.task__upper-wraper {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+.task__bottom-wrapper {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  height: 100%;
 }
-.task__title {
-  font-size: 2rem;
-  font-weight: bold;
-}
-.task__description {
-  font-size: 1rem;
-  font-weight: 100;
-}
-.task__buttons-wraper {
+.task__button-wrapper {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  align-self: flex-start;
-  justify-self: flex-end;
-}
-.task__form {
-  display: flex; 
-  flex-direction: column;
-  gap: 30px;
-  padding: 10px;
-  background-color: grey;
+  gap: 8px;
   height: 100%;
-
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.task__button {
+  position: relative;
+}
+.task__button-edit {
+  display: flex;
+  padding: 4px 6px;
+  background-color: #d1d1d1;
+  border-radius: 4px;
+  align-items: center;
+  color: black;
+  border: none;
+  transition: padding 0.3s;
+  cursor: pointer;
+  &:hover {
+    background-color: rgb(112, 112, 235);
+    color: white;
+    padding: 8px;
+  }
+  &--orange {
+      &:hover {
+        background-color: orange;
+        color: white;
+      }
+    }
+  &--red {
+    &:hover{
+      background-color: red;
+      color: white;
+    }
+  }
+  &--green {
+    &:hover{
+      background-color: green;
+      color: white;
+    }
+  }
+}
+.task__description {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+.task__edit {
+  flex-direction: column;
+  align-items: center;
   &--hidden {
     display: none;
   }
 }
-.task__title-change {
+
+.task__form-edit {
+  background-color: #a1a1a1;
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  color: #cecece;
-  font-weight: bold;
-  font-size: 0.8rem;
+  gap: 8px;
+  padding: 8px;
+  width: calc(100% - 4px);
+  border-radius: 0 0 4px 4px;
 }
-.task__description-change {
+.task__info-edit {
   display: flex;
   flex-direction: column;
-  gap: 5px;
-  color: #cecece;
-  font-weight: bold;
-  font-size: 0.65rem;
 }
+
 .task__input-field {
   color: black;
 }

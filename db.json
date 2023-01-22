@@ -1,29 +1,19 @@
 {
   "tasks": [
     {
-      "id": 1,
-      "title": "Task1",
-      "description": "And there we have some line just to copy. And there we have some line just to copy. And there we have some line just to copy. And there we have some line just to copy. And there we have some line just to copy. And there we have some line just to copy."
+      "title": "Izlabošu",
+      "description": "Jāskatās, kas notiek ar stiliem. Pa lielam izskatās, ka vienā vietā pietrūka viens kāsis. Ha iekopēt mēs varam cig gribam garu tekstu, bet uzrakstīt varam tikai norādīto!",
+      "id": 2
     },
     {
-        "id": 2,
-        "title": "Task2",
-        "description": "And there we have some line just to copy. And there we have some line just to copy. And there we have some line just to copy. And there we have some line just to copy. And there we have some line just to copy. And there we have some line just to copy."
-      },
-      {
-        "id": 3,
-        "title": "Task3",
-        "description": "And there we have some line just to copy. And there we have some line just to copy. And there we have some line just to copy. And there we have some line just to copy. And there we have some line just to copy. And there we have some line just to copy."
-      },
-      {
-        "id": 4,
-        "title": "Task4",
-        "description": "And there we have some line just to copy. And there we have some line just to copy. And there we have some line just to copy. And there we have some line just to copy. And there we have some line just to copy. And there we have some line just to copy."
-      },
-      {
-        "id": 5,
-        "title": "Task5",
-        "description": "And there we have some line just to copy. And there we have some line just to copy. And there we have some line just to copy. And there we have some line just to copy. And there we have some line just to copy. And there we have some line just to copy."
-      }
+      "title": "Task4",
+      "description": "Cik daudz atļauj sakopēt? Cik daudz atļauj sakopēt? Cik daudz atļauj sakopēt? Cik daudz atļauj sakopēt? Cik daudz atļauj sakopēt? Cik daudz atļauj sakopēt? Cik daudz atļauj sakopēt? Cik daudz atļauj s",
+      "id": 4
+    },
+    {
+      "title": "Tests 4",
+      "description": "Hopā, pievienošu tekstu. Redzēs vai stili saglabāsies.",
+      "id": 5
+    }
   ]
 }

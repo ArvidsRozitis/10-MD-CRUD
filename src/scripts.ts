@@ -24,21 +24,6 @@ addTaskToListButton.addEventListener('click', ( ) => {
     })
 })
 
-
-
-// addAnimalsButton.addEventListener('click', () => {
-//   axios.post<Animal>('http://localhost:3004/animals', {
-//     name: 'Elephantos',
-//   }).then(({ data }) => {
-//     addAnimalsPre.innerHTML = JSON.stringify(data);
-//   });
-// }); 
-
-
-
-
-
-
 axios.get<Task[]>('http://localhost:3004/tasks').then(({data}) => {
     const taskCount = Object.keys(data).length;
     document.querySelector('.js-task-count').textContent = `active task count ${taskCount}`;
@@ -60,36 +45,40 @@ const showTasks = (tasks: Task[]) => {
         taskCard.classList.add(`js-task-card-id-${task.id}`);
         taskCard.innerHTML = 
         `
-        <div class="task task__main-info">
+        <div class="task task__main">        
+            <div class="task task__upper-wraper">
                 <img src="https://picsum.photos/400/400" alt="task picture" class="task task__picture">
-                <div class="task task__text-wrapper">
-                    <h3 class="task task__title">
-                        ${task.title}
-                    </h3>
-                    <p class="task task__description">
-                        ${task.description}
-                    </p>
-                </div>
-                <div class="task task__buttons-wraper">
+                <h3 class="task task__title">
+                    ${task.title}
+                </h3>
+            </div>
+            <div class="task task__bottom-wrapper">
+                <p class="task task__description">
+                    ${task.description}
+                </p>
+                <div class="task task__button-wrapper">
                     <div class="task task__button">
-                        <button class="js-task-edit-button-id-${task.id}">
+                        <button class="task task__button-edit js-task-edit-button-id-${task.id}">
                             Edit
                         </button>
                     </div>
                     <div class="task task__button">
-                        <button class="js-button-delete-id-${task.id}">
+                        <button class="task task__button task__button-edit task__button-edit--red js-button-delete-id-${task.id}">
                             Delete
                         </button>
                     </div>
                 </div>
             </div>
-            <form class="task task__form task__form--hidden js-edit-task-panel-id-${task.id}"
+        </div>
+
+        <div class="task task__edit task__edit--hidden js-edit-task-panel-id-${task.id}">
+            <form class="task task__form-edit">
                 <input 
                     type="file"
                     accept="image/*"
-                    class="task__image-change js-input-image-id-${task.id}"
+                    class="task task__image-change js-input-image-id-${task.id}"
                 >
-                <label class="task task__title-change">
+                <label class="task task__info-edit">
                     Task title
                     <input
                         type="text"
@@ -100,41 +89,42 @@ const showTasks = (tasks: Task[]) => {
                         required
                     >
                 </label>
-                <label class="task task__description-change">
+                <label class="task task__info-edit">
                     Task description
                     <input
                         type="text"
                         value="${task.description}"
                         placeholder="Here comes title"
                         class="task task__input-field js-input-description-id-${task.id}"
-                        maxlength="100"
+                        maxlength="200"
                         required
                     >
                 </label>
                 <div class="task task__button">
-                    <button class="js-button-update-id-${task.id}">
+                    <button class="task task__button task__button-edit task__button-edit--orange js-button-update-id-${task.id}">
                         Update
                     </button>
                 </div>
             </form>
+        </div>
         `
         taskGrid.appendChild(taskCard);
 
         
-        const curentCard = document.querySelector(`.js-task-card-id-${task.id}`);
+        const curentTaskCard = document.querySelector(`.js-task-card-id-${task.id}`);
 
         const deleteTaskButton = document.querySelector(`.js-button-delete-id-${task.id}`);
         deleteTaskButton.addEventListener('click', () => {
             axios.delete<Task>(`http://localhost:3004/tasks/${task.id}`).then(() => {
-                curentCard.innerHTML = "";
+                curentTaskCard.innerHTML = "";
             });  
         });
 
 
         const editTaskButton = document.querySelector(`.js-task-edit-button-id-${task.id}`);
-        const editTaskForm = document.querySelector(`.js-edit-task-panel-id-${task.id}`)
+        const editTaskPanel = document.querySelector(`.js-edit-task-panel-id-${task.id}`);
         editTaskButton.addEventListener('click', () => {
-            editTaskForm.classList.toggle('task__form--hidden');
+            editTaskPanel.classList.toggle('task__edit--hidden');
         })
         
         const updateTaskButton = document.querySelector(`.js-button-update-id-${task.id}`);
