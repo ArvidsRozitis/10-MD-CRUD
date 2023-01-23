@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+// json-server --watch db.json --port 3004
 interface Task {
     id: number,
     title: string,
@@ -7,22 +7,6 @@ interface Task {
 }
 
 
-const addNewTaskButton = document.querySelector(`.js-add-new-task-button`);
-const formAddTask = document.querySelector(`.js-form-add-task`);
-addNewTaskButton.addEventListener('click', () => {
-    formAddTask.classList.toggle('task-add--hidden')
-});
-
-const addTaskToListButton = document.querySelector('.js-button-add-task-to-list');
-addTaskToListButton.addEventListener('click', ( ) => {
-    const addTitle = (document.querySelector(`.js-input-add-task-title`) as HTMLInputElement).value;
-    const addDescription = (document.querySelector(`.js-input-add-task-description`) as HTMLInputElement).value;
-
-    axios.post<Task>('http://localhost:3004/tasks', {
-        title : addTitle,
-        description : addDescription,
-    })
-})
 
 axios.get<Task[]>('http://localhost:3004/tasks').then(({data}) => {
     const taskCount = Object.keys(data).length;
@@ -47,7 +31,7 @@ const showTasks = (tasks: Task[]) => {
         `
         <div class="task task__main">        
             <div class="task task__upper-wraper">
-                <img src="https://picsum.photos/400/400" alt="task picture" class="task task__picture">
+                <img src="https://picsum.photos/id/${task.id}/400/400" alt="task picture" class="task task__picture">
                 <h3 class="task task__title">
                     ${task.title}
                 </h3>
@@ -141,6 +125,23 @@ const showTasks = (tasks: Task[]) => {
 
     });        
 }
+
+const addNewTaskButton = document.querySelector(`.js-add-new-task-button`);
+const formAddTask = document.querySelector(`.js-form-add-task`);
+addNewTaskButton.addEventListener('click', () => {
+    formAddTask.classList.toggle('task-add--hidden')
+});
+
+const addTaskToListButton = document.querySelector('.js-button-add-task-to-list');
+addTaskToListButton.addEventListener('click', ( ) => {
+    const addTitle = (document.querySelector(`.js-input-add-task-title`) as HTMLInputElement).value;
+    const addDescription = (document.querySelector(`.js-input-add-task-description`) as HTMLInputElement).value;
+
+    axios.post<Task>('http://localhost:3004/tasks', {
+        title : addTitle,
+        description : addDescription,
+    })
+})
 
 
 

@@ -1,19 +1,29 @@
 {
   "tasks": [
     {
-      "title": "Izlabošu",
-      "description": "Jāskatās, kas notiek ar stiliem. Pa lielam izskatās, ka vienā vietā pietrūka viens kāsis. Ha iekopēt mēs varam cig gribam garu tekstu, bet uzrakstīt varam tikai norādīto!",
+      "title": "Programmēt",
+      "description": "Daudz teksts. Daudz tekstsDaudz tekstsDaudz tekstsDaudz tekstsDaudz tekstsDaudz tekstsDaudz tekstsDaudz tekstsDaudz tekstsDaudz tekstsDaudz teksts",
       "id": 2
     },
     {
-      "title": "Task4",
-      "description": "Cik daudz atļauj sakopēt? Cik daudz atļauj sakopēt? Cik daudz atļauj sakopēt? Cik daudz atļauj sakopēt? Cik daudz atļauj sakopēt? Cik daudz atļauj sakopēt? Cik daudz atļauj sakopēt? Cik daudz atļauj s",
+      "title": "Jāpārbauda",
+      "description": "Kas notiek ar izmaņām",
       "id": 4
     },
     {
-      "title": "Tests 4",
+      "title": "Kas te atkal",
       "description": "Hopā, pievienošu tekstu. Redzēs vai stili saglabāsies.",
       "id": 5
+    },
+    {
+      "title": "Apskatamies",
+      "description": "Kaut kas notiek",
+      "id": 7
+    },
+    {
+      "title": "Nu aiziet vēlreiz",
+      "description": "Laikma novietojumā bija problēma",
+      "id": 8
     }
   ]
 }
