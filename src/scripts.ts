@@ -114,8 +114,8 @@ const showTasks = (tasks: Task[]) => {
         const updateTaskButton = document.querySelector(`.js-button-update-id-${task.id}`);
         updateTaskButton.addEventListener('click', () => {
             axios.put<Task>(`http://localhost:3004/tasks/${task.id}`, {
-                title : (document.querySelector(`.js-input-title-id-${task.id}`) as HTMLInputElement).value,  //šeit
-                description : (document.querySelector(`.js-input-description-id-${task.id}`) as HTMLInputElement).value, //šeit
+                title : (document.querySelector<HTMLInputElement>(`.js-input-title-id-${task.id}`)).value,  //šeit
+                description : (document.querySelector<HTMLInputElement>(`.js-input-description-id-${task.id}`)).value, //šeit
             }).then(() => {
                     console.log('notika'); 
                 });
